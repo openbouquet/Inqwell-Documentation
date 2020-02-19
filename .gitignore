@@ -1,0 +1,12 @@
+.sass-cache
+.jekyll-metadata
+_config_local.yml
+
+# Jekyll
+_site/
+*-cache/
+.jekyll-metadata
+
+# Ruby
+Gemfile.lock
+
