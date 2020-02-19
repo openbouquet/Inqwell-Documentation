@@ -12,6 +12,7 @@
 # These are used to personalize your new site. If you look in the HTML files,
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
+
 # in the templates via {{ site.myvariable }}.
 title: Inqwell Documentation
 email: ""
@@ -41,12 +42,12 @@ heading_anchors: false
 search_enabled: true
 search_tokenizer_separator: /[\s/]+/
 
-defaults:
-  -
-    scope:
-      path: "" # an empty string here means all files in the project
-    values:
-      layout: "default"
+# defaults:
+#   -
+#     scope:
+#       path: "" # an empty string here means all files in the project
+#     values:
+#       layout: "default"
 
 
 # Exclude from processing.
