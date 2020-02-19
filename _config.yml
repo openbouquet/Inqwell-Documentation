@@ -13,10 +13,10 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Documentation
-email: your-email@example.com
+title: Inqwell Documentation
+email: ""
 description: >- # this means to ignore newlines until "baseurl:"
-  description documentation
+  Inqwell Documentation
 baseurl: "/inqwell-documentation/" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: ""
@@ -25,18 +25,28 @@ github_username:  ""
 # Build settings
 markdown: kramdown
 remote_theme: pmarsceill/just-the-docs
-#theme: just-the-docs
+# theme: just-the-docs
 plugins:
   - jekyll-feed
   
-logo: '/assets/images/favicon.ico'
+logo: '/assets/images/asp.png'
 aux_links:
-  "Just the Docs on GitHub":
-    - "//github.com/pmarsceill/just-the-docs"
+  "Inqwell Docs on GitHub":
+    - "//github.com/openbouquet/inqwell-documentation"
     
-footer_content: "Copyright &copy;"
-heading_anchors: true
+footer_content: "Copyright &copy; 2020"
+
+heading_anchors: false
 # color_scheme: "dark"
+search_enabled: true
+search_tokenizer_separator: /[\s/]+/
+
+defaults:
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+    values:
+      layout: "default"
 
 
 # Exclude from processing.
