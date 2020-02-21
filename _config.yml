@@ -30,14 +30,14 @@ remote_theme: pmarsceill/just-the-docs
 plugins:
   - jekyll-feed
   
-logo: '/assets/images/asp.png'
+logo: '/assets/images/bouquet.png'
 aux_links:
   "Inqwell Docs on GitHub":
     - "//github.com/openbouquet/inqwell-documentation"
     
 footer_content: "Copyright &copy; 2020"
 
-heading_anchors: false
+heading_anchors: true
 # color_scheme: "dark"
 search_enabled: true
 search_tokenizer_separator: /[\s/]+/

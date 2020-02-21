@@ -7,6 +7,7 @@ title: Inqwell
 permalink: /
 has_children: true
 nav_order: 0
+has_toc: false
 ---
 
 
