@@ -8,6 +8,7 @@ nav_order: 2
 ---
 
 <h1 id ="">Handling Subscriptions & Account Hierarchies</h1>
+
 <h2 id="HandlingSubscriptions&amp;AccountsHierarchies-HandlingAccountsHierarchies">Handling Accounts Hierarchies</h2>
 
 <p>The only data requested is a 2 columns file indicating each parent-child relation<br/>Hierarchies management allow for a node to have multiple parents &amp; multiple children.<br/>It works as many n-levels hierarchy.</p><p>Squid Solutions will handle a differential process to tag the lifetime of every hierarchy branch. This is to ensure a correct reporting of hierarchies &amp; 0 usage along the reporting period selected.</p>

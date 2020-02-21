@@ -7,8 +7,7 @@ grand_parent: Inqwell Offering
 nav_order: 1
 ---
 
-<h1>Handling Subscriptions & Account Hierarchies</h1>
-<h2 id="CounterApp-CounterReports">Counter Reports</h2>
+<h1>Counter Reports</h1>
 
 <p>With Inqwell Counter data model, you can implement any Counter Release 4 reports.<br/>Counter Release 3 reports are also supported but not part of the standard offer.</p><p>An automated data processing is in charge of consolidating event data first to an daily level then to a monthly level.<br/>Counter reports rely on this monthly level. According to the report requested, data is being filtered in a specific way. As consequence it is necessary to correctly send event &amp; reference data so they get counted in the correct report.<br/>We describe below requirements in order to understand how to send data in the right way</p>
 

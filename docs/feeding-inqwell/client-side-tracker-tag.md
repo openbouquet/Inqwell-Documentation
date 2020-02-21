@@ -46,31 +46,8 @@ Insert in every web page head (just before the closing </HEAD>; tag) the followi
 <!-- end squidanalytics tracker -->
 ```
 
-<p>This tracking code must be configured:</p><p><strong>wid</strong> : site account id (provided by squid): different ids for prod, preprod or dev sites to be requested to Squid<br/><strong>dom</strong> : the domain to track users on. Typically, this should be your primary domain name prefixed with a dot (ex: &quot;.squidsolutions.com &quot;) which will track users on all your subdomains such as for example <a href="http://www.squidsolutions.com" class="external-link" rel="nofollow">www.squidsolutions.com</a> or <a href="http://video.squidsolutions.com" class="external-link" rel="nofollow">video.squidsolutions.com</a>. Leaving it blank will restrict the tracking to the current subdomain where the page was loaded from, &amp; generate single event sessions. We use the library <a href="https://github.com/medialize/URI.js" class="external-link" rel="nofollow">URI.js</a> to get this domain, in the code above<br/><strong>uid</strong> : (optional) user id (you may put here an id associated to the current logged user)<br/><strong>post</strong> : (optional) true or false to enable POST requests (handling large requests data). Default is false<br/><strong>ext</strong> : (optional) an extra field used to pass extra information to our tracker, preferably a set of key-value pairs sent as a json string or as a URL query string, URI encoded</p><div class="confluence-information-macro confluence-information-macro-information"><span class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p><strong>Automatic Page tracking</strong></p><p>Adding this tag in every page, &amp; last, pushing 'track' generates a tracking event, considered as a page display.</p></div></div><div class="confluence-information-macro confluence-information-macro-information"><span class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p><strong>Use of extra fields</strong></p><p>Examples use of extra fields: categorize pages, give context additional information (account, content, interactions). Please refer to the tracking rules below for normalized information codes</p></div></div></div>
+<p>This tracking code must be configured:</p><p><strong>wid</strong> : site account id (provided by squid): different ids for prod, preprod or dev sites to be requested to Squid<br/><strong>dom</strong> : the domain to track users on. Typically, this should be your primary domain name prefixed with a dot (ex: &quot;.squidsolutions.com &quot;) which will track users on all your subdomains  . Leaving it blank will restrict the tracking to the current subdomain where the page was loaded from, &amp; generate single event sessions. We use the library <a href="https://github.com/medialize/URI.js" class="external-link" rel="nofollow">URI.js</a> to get this domain, in the code above<br/><strong>uid</strong> : (optional) user id (you may put here an id associated to the current logged user)<br/><strong>post</strong> : (optional) true or false to enable POST requests (handling large requests data). Default is false<br/><strong>ext</strong> : (optional) an extra field used to pass extra information to our tracker, preferably a set of key-value pairs sent as a json string or as a URL query string, URI encoded</p><div class="confluence-information-macro confluence-information-macro-information"><span class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p><strong>Automatic Page tracking</strong></p><p>Adding this tag in every page, &amp; last, pushing 'track' generates a tracking event, considered as a page display.</p></div></div><div class="confluence-information-macro confluence-information-macro-information"><span class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p><strong>Use of extra fields</strong></p><p>Examples use of extra fields: categorize pages, give context additional information (account, content, interactions). Please refer to the tracking rules below for normalized information codes</p>
 
-</div>
-<div class="cell aside" data-type="aside">
-<div class="innerCell">
-<p><strong>On this page:</strong></p><style type='text/css'>/*<![CDATA[*/
-div.rbtoc1582134422299 {padding: 0px;}
-div.rbtoc1582134422299 ul {list-style: disc;margin-left: 0px;}
-div.rbtoc1582134422299 li {margin-left: 0px;padding-left: 0px;}
-
-/*]]>*/</style><div class='toc-macro rbtoc1582134422299'>
-<ul class='toc-indentation'>
-<li><a href='#ClientSideTrackerTagging-PageTrackingsetup'>Page Tracking setup</a></li>
-<li><a href='#ClientSideTrackerTagging-HandlingAd-Blockers'>Handling Ad-Blockers</a></li>
-<li><a href='#ClientSideTrackerTagging-EventTrackingsetup'>Event Tracking setup</a></li>
-<li><a href='#ClientSideTrackerTagging-TrackingPixelSetup'>Tracking Pixel Setup</a></li>
-<li><a href='#ClientSideTrackerTagging-Notes'>Notes</a></li>
-<li><a href='#ClientSideTrackerTagging-Trackingrules'>Tracking rules</a></li>
-</ul>
-</div><p><br/></p></div>
-</div>
-</div>
-<div class="columnLayout two-right-sidebar" data-layout="two-right-sidebar">
-<div class="cell normal" data-type="normal">
-<div class="innerCell">
 <h2 id="ClientSideTrackerTagging-HandlingAd-Blockers">Handling Ad-Blockers</h2><p>Ad-Blockers are more &amp; more used &amp; most popular ones block by default our tracker. A good way to bypass these restriction is to reverse proxy our 2 resources <a href="https://aws.tracker.squidanalytics.com/js/tracker.js" class="external-link" rel="nofollow">tracker.js</a> &amp; <a href="https://aws.tracker.squidanalytics.com/t.gif" class="external-link" rel="nofollow">t.gif</a> between a domain you hosts &amp; our tracker domain <a href="http://aws.tracker.squidanalytics.com" class="external-link" rel="nofollow"><strong>aws.tracker.squidanalytics.com</strong></a><br/>Please find a sample configuration to be added in a vhost on Apache:</p><p><strong>Setting the configuration (Apache)</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">SSLProxyEngine On
 SSLProxyCheckPeerCN on
@@ -81,30 +58,27 @@ ProxyPass &quot;/t.gif&quot; &quot;https://aws.tracker.squidanalytics.com/t.gif&
 </div></div><p>Once this has been added to the vhost config, please release it (shell commands):</p><p><strong>Activate configuration</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">a2enmod proxy_http ssl remoteip
 service apache2 restart</pre>
-</div></div><div class="confluence-information-macro confluence-information-macro-information"><span class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p><strong>Implementation</strong></p><p>Modify the variable sqtrk.src in the script above accordingly to uses the domain configured for your vhost defining the reverse proxy</p></div></div></div>
-</div>
-<div class="cell aside" data-type="aside">
-<div class="innerCell">
-<p /></div>
-</div>
-</div>
-<div class="columnLayout two-right-sidebar" data-layout="two-right-sidebar">
-<div class="cell normal" data-type="normal">
-<div class="innerCell">
-<h2 id="ClientSideTrackerTagging-EventTrackingsetup">Event Tracking setup</h2><p>In addition of the above code, you can implement event based tracking (panel activation, click event, redirect) by adding following type of function &amp; calling it during clicks processing or other interactions you would like to record</p><p><strong>JavaScript</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
-<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">&lt;!-- squidanalytics tracker (v1.8) --&gt;
-&lt;script type=&quot;text/javascript&quot;&gt;
+</div></div></div></div><br/>
+<p><strong>Implementation</strong></p><p>Modify the variable sqtrk.src in the script above accordingly to uses the domain configured for your vhost defining the reverse proxy</p>
+
+
+<h2 id="ClientSideTrackerTagging-EventTrackingsetup">Event Tracking setup</h2><p>In addition of the above code, you can implement event based tracking (panel activation, click event, redirect) by adding following type of function &amp; calling it during clicks processing or other interactions you would like to record</p><p><strong>JavaScript</strong></p>
+
+```
+<!-- squidanalytics tracker (v1.8) -->
+<script type="text/javascript">
 function sqclick(data) {
     try { 
-&lt;!-- Generate a json string giving event details--&gt;
+<!-- Generate a json string giving event details-->
       jsonString = ...
-      sqtrkq.push([&#39;event&#39;, encodeURIComponent(jsonString)]);
+      sqtrkq.push(['event', encodeURIComponent(jsonString)]);
     } catch (err) {}
 }
-&lt;/script&gt;
-&lt;!-- end squidanalytics tracker --&gt;</pre>
-</div></div><p><strong>jsonString</strong>: used to pass event information to our tracker, preferably a set of key-value pairs sent as a json string.</p><div class="confluence-information-macro confluence-information-macro-note"><span class="aui-icon aui-icon-small aui-iconfont-warning confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p><strong>Event tracking vs Page tracking</strong></p><p>Pushing 'event' generates a tracking event. Without setting the element 'mut' in the jsonString, (see Tracking rules), this hit is counted as a page display event. Please take this in account if you want to consider an event also as a page load or not.<br/>Also don't forget to setup 'mact' element to indicates what is the interaction you want to record<br/>You should also recall any other element provided at page load (page classification, content, etc ...) so the whole context is recorded in the event</p></div></div></div>
-</div>
+</script>
+<!-- end squidanalytics tracker -->
+```
+
+<p><strong>jsonString</strong>: used to pass event information to our tracker, preferably a set of key-value pairs sent as a json string.</p><div class="confluence-information-macro confluence-information-macro-note"><span class="aui-icon aui-icon-small aui-iconfont-warning confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p><strong>Event tracking vs Page tracking</strong></p><p>Pushing 'event' generates a tracking event. Without setting the element 'mut' in the jsonString, (see Tracking rules), this hit is counted as a page display event. Please take this in account if you want to consider an event also as a page load or not.<br/>Also don't forget to setup 'mact' element to indicates what is the interaction you want to record<br/>You should also recall any other element provided at page load (page classification, content, etc ...) so the whole context is recorded in the event</p></div>
 <div class="cell aside" data-type="aside">
 <div class="innerCell">
 <p /></div>
@@ -115,7 +89,7 @@ function sqclick(data) {
 <div class="innerCell">
 <h2 id="ClientSideTrackerTagging-TrackingPixelSetup"><strong>Tracking Pixel Setup</strong></h2><p>In the case of a non Javascript environment (Mobile app, AdServer creative, Emailing....) a &quot;pixel&quot; version of the tracking code is available :</p><p><strong>HTML</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">&lt;img width=&quot;1&quot; height=&quot;1&quot; src=&quot;//aws.tracker.squidanalytics.com/t.gif?wid={wid}&amp;uid={uid}&amp;bid={bid}&amp;sid={sid}&amp;ref={ref}&amp;url={url}&amp;ext=noscript&amp;ext={ext}&quot; /&gt;</pre>
-</div></div><p>Configure the tracking code :<br/><strong>wid</strong> : site account id (provided by squid)<br/><strong>uid</strong> : (optional) user id (you may put here an id associated to the current logged user)<br/><strong>bid</strong> : browser id (less than 37 chars) - it is the unique browser identifier used to track all visits.. (optional).<br/><strong>sid</strong> : session id (less than 37 chars) - it is the unique session identifier used to track all session interactions. (optional).<br/><strong>ref</strong> : referring page url (url-encoded) (optional)<br/><strong>url</strong> : current page url (url-encoded) (optional)<br/><strong>ext</strong> : extra parameters. if a &quot;noscript&quot; value is set, 3rd-party cookie tracking will be enabled (optional)</p></div>
+</div></div><br/><p>Configure the tracking code :<br/><strong>wid</strong> : site account id (provided by squid)<br/><strong>uid</strong> : (optional) user id (you may put here an id associated to the current logged user)<br/><strong>bid</strong> : browser id (less than 37 chars) - it is the unique browser identifier used to track all visits.. (optional).<br/><strong>sid</strong> : session id (less than 37 chars) - it is the unique session identifier used to track all session interactions. (optional).<br/><strong>ref</strong> : referring page url (url-encoded) (optional)<br/><strong>url</strong> : current page url (url-encoded) (optional)<br/><strong>ext</strong> : extra parameters. if a &quot;noscript&quot; value is set, 3rd-party cookie tracking will be enabled (optional)</p></div>
 </div>
 <div class="cell aside" data-type="aside">
 <div class="innerCell">
@@ -125,9 +99,9 @@ function sqclick(data) {
 <div class="columnLayout two-right-sidebar" data-layout="two-right-sidebar">
 <div class="cell normal" data-type="normal">
 <div class="innerCell">
-<h2 id="ClientSideTrackerTagging-Notes">Notes</h2><p><strong>Third-party tracking</strong></p><p>3rd-party cookies must be used when performing cross-site tracking.</p><p>For instance when the tracking pixel is used to track creatives served by an Ad-Server, only 3rd party cookies can be used since the page where the pixel is displayed is on an external domain.</p><p>By default 3rd-party cookies are created on our .squidanalytics.com domain.</p><p>Should this cause data confidentiality issues, we may be able to create them on a specific 3rd-party domain by setting-up a DNS alias on a custom sub-domain such as <a href="http://tracking.3rdparty.com" class="external-link" rel="nofollow">tracking.3rdparty.com</a> so that our tracking infrastructure is seen as being part of the .3rdparty.com domain and thus is able to create cookies on this domain.</p><p>In that case the tracking pixel would turn to :</p><p><strong>HTML</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<h2 id="ClientSideTrackerTagging-Notes">Notes</h2><p><strong>Third-party tracking</strong></p><p>3rd-party cookies must be used when performing cross-site tracking.</p><p>For instance when the tracking pixel is used to track creatives served by an Ad-Server, only 3rd party cookies can be used since the page where the pixel is displayed is on an external domain.</p><p>By default 3rd-party cookies are created on our .squidanalytics.com domain.</p><p>Should this cause data confidentiality issues, we may be able to create them on a specific 3rd-party domain by setting-up a DNS alias on a custom sub-domain, so that our tracking infrastructure is seen as being part of the .3rdparty.com domain and thus is able to create cookies on this domain.</p><p>In that case the tracking pixel would turn to :</p><p><strong>HTML</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
 <pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">&lt;img width=&quot;1&quot; height=&quot;1&quot; src=&quot;//tracking.3rdparty.com/t.gif?wid={wid}&amp;uid={uid}&amp;bid={bid}&amp;sid={sid}&amp;ref={ref}&amp;url={url}&amp;ext=noscript&amp;ext={ext}&quot; /&gt;</pre>
-</div></div><div class="confluence-information-macro confluence-information-macro-note"><span class="aui-icon aui-icon-small aui-iconfont-warning confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p><strong>Limitations</strong></p><p>3rd-party cookies are not enabled by default on Safari-based browsers. Therefore when such a browser is detected by its user-agent string, we will not enable the 3rd-party tracking.</p><p>Also Ad Blockers are removing our third party cookies</p></div></div></div>
+</div></div><div class="confluence-information-macro confluence-information-macro-note"><span class="aui-icon aui-icon-small aui-iconfont-warning confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><br/><p><strong>Limitations</strong></p><p>3rd-party cookies are not enabled by default on Safari-based browsers. Therefore when such a browser is detected by its user-agent string, we will not enable the 3rd-party tracking.</p><p>Also Ad Blockers are removing our third party cookies</p></div></div></div>
 </div>
 <div class="cell aside" data-type="aside">
 <div class="innerCell">

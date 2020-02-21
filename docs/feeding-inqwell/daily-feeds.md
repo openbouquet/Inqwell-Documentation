@@ -9,10 +9,10 @@ nav_order: 3
 
 <h2 id="DailyFeeds-Filestransfer">Files transfer</h2>
 
-We require a daily feed to be uploaded into a dedicated S3 folder created for your platform. Please contact Bouquet.ai for its setup
+We require a daily feed to be uploaded into a dedicated S3 folder created for your platform. Please contact Bouquet.ai for its setup.
 
 
-### **Protection**
+> **Protection**
 
 > This folder, hosted on Bouquet’s AWS account is explicitelly restricted on your IAM role to ensure privacy
 

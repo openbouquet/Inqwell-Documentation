@@ -9,4 +9,6 @@ has_children: true
 nav_order: 1
 ---
 
+# Inqwell Offering
+
 <script src="../assets/js/removeMadeWith.js"></script>

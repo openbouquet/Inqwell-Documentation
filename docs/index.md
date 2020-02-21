@@ -10,7 +10,7 @@ nav_order: 0
 ---
 
 
-# Space Details:
+# Inqwell
 
 <table class="">
     <tr>
