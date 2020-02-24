@@ -15,13 +15,10 @@
 
 # in the templates via {{ site.myvariable }}.
 title: Inqwell Documentation
-email: ""
 description: >- # this means to ignore newlines until "baseurl:"
   Inqwell Documentation
 baseurl: "/inqwell-documentation/" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: ""
-github_username:  ""
+url: "" # the base hostname & protocol for your site
 
 # Build settings
 markdown: kramdown
@@ -35,20 +32,12 @@ aux_links:
   "Inqwell Docs on GitHub":
     - "//github.com/openbouquet/inqwell-documentation"
     
-footer_content: "Copyright &copy; 2020"
+footer_content: "Copyright &copy; Bouquet 2020"
 
 heading_anchors: true
 # color_scheme: "dark"
 search_enabled: true
 search_tokenizer_separator: /[\s/]+/
-
-# defaults:
-#   -
-#     scope:
-#       path: "" # an empty string here means all files in the project
-#     values:
-#       layout: "default"
-
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
