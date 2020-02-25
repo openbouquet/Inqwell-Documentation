@@ -16,5 +16,3 @@ nav_order: 1
 
 
 <p>Important</p><p>You must send the proper format ids in retrieval events, please download the standard list: <a href="../../../inqwell-documentation/assets/sql/inqwell_reference_data.sql" class="external-link" rel="nofollow">inqwell_reference_data.sql</a></p>
-
-<script src="../../assets/js/removeMadeWith.js"></script> 

@@ -16,6 +16,3 @@ Online aggregator websites providers (ProQuest, Ebsco, Project Muse, etc.) regul
 - feed them usage analytics specifically orientated to the needs.
 
 We propose to set up dashboards to publisher that use different sources and offer various metrics and dimensions. Publishers will have the opportunity to refer to these informal usage dashboards to monitor activities either from an author point of view or an institution, a library, etc.</p>
-
-
-<script src="../../assets/js/removeMadeWith.js"></script>

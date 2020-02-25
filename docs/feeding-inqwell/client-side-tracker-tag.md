@@ -122,4 +122,3 @@ function sqclick(data) {
 <div class="cell normal" data-type="normal">
 <div class="innerCell">
 
-<script src="../assets/js/removeMadeWith.js"></script>

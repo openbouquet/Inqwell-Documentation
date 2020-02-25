@@ -20,5 +20,3 @@ This usage serves the different applications. For Counter or Publisher applicati
 <h2 id="ClientSideTracker-DefaultTrackeddata">Default Tracked data</h2>
 
 <ul><li><p>visit timestamp</p></li><li><p>visitor id</p></li><li><p>visitor session id</p></li><li><p>logged-in user id (if injected by backend)</p></li><li><p>visited page url</p></li><li><p>referring page url</p></li><li><p>user location based on user IP address</p></li><li><p>browser type</p></li></ul>
-
-<script src="../assets/js/removeMadeWith.js"></script>

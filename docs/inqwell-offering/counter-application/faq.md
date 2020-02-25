@@ -37,5 +37,3 @@ nav_order: 3
 <p>This is indeed possible. A custom project is put in place in such case, involving SquidSolutions consulting team to setup requirements &amp; implementation with you.</p>
 
 
-
-<script src="../../assets/js/removeMadeWith.js"></script>

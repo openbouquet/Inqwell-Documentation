@@ -13,5 +13,3 @@ community. Inqwell uses the industry’s own COUNTER standard to provide reliabl
 
 Inqwell provides each publisher with a private destination for their usage data in a secure, hosted environment. Inqwell's unique SSO technology allows you to give access to the applications to your librarians, authors or publishers so they see only their data.
 They just have to login to the portal you provide for them.
-
-<script src="../assets/js/removeMadeWith.js"></script>
