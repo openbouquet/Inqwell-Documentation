@@ -9,26 +9,14 @@ has_children: true
 nav_order: 0
 has_toc: false
 ---
+<div style="display:flex;align-items: center">
+    <h1>Inqwell by Bouquet </h1>
+    <img src="./assets/images/bouquet.png" alt="logo">    
+</div>
 
-# Inqwell
-
-<table class="">
-    <tr>
-        <th class="">Key</th>
-        <td class="">INQ</td>
-    </tr>
-    <tr>
-        <th class="">Name</th>
-        <td class="">Inqwell</td>
-    </tr>
-    <tr>
-        <th class="">Description</th>
-        <td class=""></td>
-    </tr>
-    <tr>
-        <th class="">Created by</th>
-        <td class="">5adb747b4b0cbc29b7b53858 (Jan 17, 2020)</td>
-    </tr>
-</table>
+<div style="font-weight: bold; margin-top: 30px;display:flex; align-items: center; flex-direction: column;">
+    <p>Usage Analytics Platform for Scholarly Publishers</p>
+    <p >Handbook</p>
+</div>
 
 <script src="./assets/js/removeMadeWith.js"></script>
