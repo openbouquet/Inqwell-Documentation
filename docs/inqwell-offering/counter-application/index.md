@@ -15,4 +15,3 @@ has_children: true
 <h2 id="CounterApplication-MoreaboutReferenceData">More about Reference Data</h2><p>Counter reports imposes the ability to report non usage on subscribed content. We require you to provide this subscription information (see Zero Usage Data Model).<br/>Counter reports handles lots of reference data about content such as identification (DOI, ISSN, ISBN) or publisher, this has to provided not only on used content but also for the whole subscribed content.</p>
 
 
-<script src="../../assets/js/removeMadeWith.js"></script>

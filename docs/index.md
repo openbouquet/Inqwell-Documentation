@@ -18,5 +18,3 @@ has_toc: false
     <p>Usage Analytics Platform for Scholarly Publishers</p>
     <p >Handbook</p>
 </div>
-
-<script src="./assets/js/removeMadeWith.js"></script>

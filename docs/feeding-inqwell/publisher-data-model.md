@@ -20,5 +20,3 @@ nav_order: 2
 > **Which retrievals are reported for publishers?**
 
 > Formats for Counter book or journal reports are included in publisher reports only.
-
-<script src="../assets/js/removeMadeWith.js"></script>

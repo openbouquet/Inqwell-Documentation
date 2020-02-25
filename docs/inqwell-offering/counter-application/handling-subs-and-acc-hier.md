@@ -30,5 +30,3 @@ nav_order: 2
 In the example above we want to report usage of child E &amp; grandchild G into account C only if content is provided by parent A. So we will only count DB1 content usage if it being paid by parent A (if it comes from parent B, it will not be counted).
 
 If you select parent = account = child, you count any content provided by the account or his parents, across all children of the account, including himself. This allow for example to view usage at Consortium level, including all children but also rollup at any level, to view usage at a sub level but only on one path by selecting the correct parent to handle properly 0 usage &amp; databases exclusions (like for account F) Include /exclude children according to the time they join/leave the hierarchy.
-
-<script src="../../assets/js/removeMadeWith.js"></script>
